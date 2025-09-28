@@ -11,10 +11,10 @@ interface EmailData {
 
 const Page = () => {
   const [emails, setEmails] = useState<EmailData[]>([]);
-
+  console.log("how are you ", process.env.NEXT_PUBLIC_Backend_Url)
   useEffect(() => {
     // Fetching data from the provided URL
-    fetch('https://maniknew5000.sobhoy.com/emails')
+    fetch(`${process.env.NEXT_PUBLIC_Backend_Url}/emails`)
       .then(response => response.json())
       .then((data) => {
         setEmails(data.emails); // Assuming the response has 'emails' key
