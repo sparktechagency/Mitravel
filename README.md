@@ -1,3 +1,3 @@
-# MedicalEquipment
+
 # Mitravel
 # Mitravel
