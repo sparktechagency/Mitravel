@@ -29,7 +29,7 @@ const Playstore = () => {
     }
 
     try {
-      const res = await axios.post("https://maniknew5000.sobhoy.com/sendMessage", { email });
+      const res = await axios.post(`${process.env.NEXT_PUBLIC_Backend_Url}/sendMessage`, { email });
 
       if (res.status === 200) {
         Swal.fire({
