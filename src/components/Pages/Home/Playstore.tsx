@@ -30,7 +30,14 @@ const Playstore = () => {
 
     try {
       const res = await axios.post(`${process.env.NEXT_PUBLIC_Backend_Url}/sendMessage`, { email });
-
+      if(res.status === 400){
+        Swal.fire({
+          icon: "error",
+          title: "Already",
+          text: "This email is already subscribed",
+          confirmButtonColor: "#3085d6",
+        });
+      }
       if (res.status === 200) {
         Swal.fire({
           icon: "success",
